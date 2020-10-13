@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
       render :index
     end
   end
+
   def message_params
     params.require(:message).permit(:content).merge(user_id: current_user.id)
     # パラメーターの中にログインしているユーザーのidを結合させてcontentを受け取れるようにする
